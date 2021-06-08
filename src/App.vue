@@ -1,28 +1,92 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="card-grid">
+   <tourcard v-for="tour in TourList" v-bind:Key="tour.location" v-bind:tour ="tour"/>
+    </div>
+
+   <button  v-on:click="showDiv=true">pop-up</button>
+   <div v-bind:class="{showDiv:showDiv}" v-if="showDiv">
+     <button  v-on:click="showDiv=false">close</button>
+     <div class="room-info">
+     <label for="room-name">
+     Room Name
+     </label><br>
+     
+      <input ref="room" type="text"><br>
+      <label for="description">
+      Describe:
+     </label><br>
+     <textarea  name="description" id="" cols="30" rows="10"></textarea><br>
+     <label for="location">
+       location
+    </label><br>
+     <input type="text"><br>
+     
+     </div>
+   </div>
   </div>
+  
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import tourcard from './components/tourcard.vue'
 
 export default {
+  components: { tourcard },
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+    TourList:[{
+      id:0,
+
+      RoomName:"Deluxe",
+      Describe:'mesmerzing and brings mushy memories',
+      location:"Darjeeling"
+    },
+    {
+      id:1,
+      RoomName:"roof-top",
+      Describe:'pleasant with moon and sun-light',
+      location:"bali"
+    },
+    {
+      id:2,
+       RoomName:"seaFacing side",
+      Describe:'lying on the bed and enjoying furious waves adds beauty',
+      location:"maldives"
+    }],
+    
+    showDiv:false,
+     room:'',
+     clear:function(){
+       console.log(this.refs)
+     }
+    }
+    
+    }
+
+    
   }
-}
+
+ 
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.card-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:20px;
+    color:white;
 }
+.showDiv{
+  background:cornflowerblue ;
+  padding:10px;
+  width:300px;
+  height:auto;
+}
+
 </style>
