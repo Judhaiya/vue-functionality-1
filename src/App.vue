@@ -1,80 +1,64 @@
 <template>
   <div id="app">
-    <div class="card-grid">
-   <tourcard v-for="tour in TourList" v-bind:Key="tour.location" v-bind:tour ="tour"/>
-    </div>
+<p>Hello</p>
+<div class="nav-links">
+  <p> <router-link to="/contact">Contact</router-link></p>
 
-   <button  v-on:click="showDiv=true">pop-up</button>
-   <div v-bind:class="{showDiv:showDiv}" v-if="showDiv">
-     <button  v-on:click="showDiv=false">close</button>
-     <div class="room-info">
-     <label for="room-name">
-     Room Name
-     </label><br>
-     
-      <input ref="room" type="text"><br>
-      <label for="description">
-      Describe:
-     </label><br>
-     <textarea  name="description" id="" cols="30" rows="10"></textarea><br>
-     <label for="location">
-       location
-    </label><br>
-     <input type="text"><br>
-     
-     </div>
-   </div>
-  </div>
+  <router-link to="/about">About</router-link>
+</div>
   
- 
+  
+  
+<router-view></router-view>
+
+<Form :name="hotel"/>
+
+  </div>
 </template>
+     
+ <script>
 
-<script>
+ import Form from "./components/Form"
 
+ 
 
-import tourcard from './components/tourcard.vue'
-
-export default {
-  components: { tourcard },
-  name: 'App',
-  data(){
-    return {
-    TourList:[{
-      id:0,
-
-      RoomName:"Deluxe",
-      Describe:'mesmerzing and brings mushy memories',
-      location:"Darjeeling"
-    },
-    {
-      id:1,
-      RoomName:"roof-top",
-      Describe:'pleasant with moon and sun-light',
-      location:"bali"
-    },
-    {
-      id:2,
-       RoomName:"seaFacing side",
-      Describe:'lying on the bed and enjoying furious waves adds beauty',
-      location:"maldives"
-    }],
-    
-    showDiv:false,
-     room:'',
-     clear:function(){
-       console.log(this.refs)
+ 
+  export default {
+  components: { Form },
+    name:"App",
+   data(){
+     return{
+       hotel:[
+         {
+        HotelName:"Berzillus",
+        feedback:"Good"
+       },
+         {
+        HotelName:"Berzillus",
+        feedback:"Good"
+       },
+         {
+        HotelName:"Berzillus",
+        feedback:"Good"
+       }]
      }
-    }
-    
-    }
-
-    
+   }
+ 
   }
 
+
+ </script>
+ 
+ 
  
 
-</script>
-
+ 
+ <style>
+ 
+ </style>    
+    
+    
+ 
 <style>
 .card-grid{
     display:grid;
