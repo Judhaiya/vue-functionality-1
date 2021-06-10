@@ -1,48 +1,29 @@
 <template>
   <div id="app">
-<p>Hello</p>
-<div class="nav-links">
-  <p> <router-link to="/contact">Contact</router-link></p>
 
-  <router-link to="/about">About</router-link>
+<div class="nav-links">
+  <Welcome />
 </div>
   
   
   
 <router-view></router-view>
 
-<Form :name="hotel"/>
+
 
   </div>
 </template>
      
  <script>
+import Welcome from "./components/Welcome.vue"
+export default {
+  name:"App",
+  component:{
+    Welcome
+  }
+  
 
- import Form from "./components/Form"
-
- 
-
- 
-  export default {
-  components: { Form },
-    name:"App",
-   data(){
-     return{
-       hotel:[
-         {
-        HotelName:"Berzillus",
-        feedback:"Good"
-       },
-         {
-        HotelName:"Berzillus",
-        feedback:"Good"
-       },
-         {
-        HotelName:"Berzillus",
-        feedback:"Good"
-       }]
-     }
-   }
+   
  
   }
 

@@ -1,15 +1,15 @@
 <template>
   <div class="form">
     <form action="">
-      <label for="Hotel-name"> Hotel Name </label>
-      <input v-model="hotel.hotelName" type="text" />
-      <label for="feedback"> feedback </label>
-      <input v-model="hotel.feedback" type="text" />
+      <label for="Hotel-name"> Hotel Name </label><br>
+      <input v-model="hotel.HotelName" type="text" /><br>
+      <label for="feedback"> feedback </label><br>
+      <textarea v-model="hotel.feedback" type="text" /><br>
       <button v-on:click.prevent="store" class="add">Add</button>
     </form>
-    <p>{{ hotel.hotelName }}</p>
-    <p>{{ name }}</p>
-    <p>{{ datahotel }}</p>
+    
+   
+
   </div>
 </template>
 <script>
@@ -20,22 +20,24 @@ export default {
   },
   data() {
     return {
-      datahotel: [],
+     
 
       hotel: {
-        hotelName: "",
+        HotelName: "",
         feedback: "",
       },
     };
   },
   methods: {
-    store: function () {
-      this.datahotel.push(this.hotel);
+    
+    store:function(){
+      this.$store.state.hotel.push(this.hotel);
       this.hotel = {
-        hotelName: "",
-        feedback: "",
+        HotelName: "",
+        feedback:  "",
       };
-    },
+    }
+    
   },
 };
 </script>
