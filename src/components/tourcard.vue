@@ -1,7 +1,7 @@
 <template>
 
 <div class="tour-card">
-  <h2>View feedback from regular customer</h2>
+  <h2 class="f-heading">View feedback from regular customer</h2>
   <div class="display-grid">
     <div class="card" v-for ="(tour,i) in hotel" :key="i">
         <p >{{tour.HotelName}}</p>
@@ -37,5 +37,8 @@ export default {
    text-align: center;
    padding:20px;
    margin:2rem;
+ }
+ .f-heading{
+     text-align: center;
  }
 </style>

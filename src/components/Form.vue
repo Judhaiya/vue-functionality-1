@@ -1,10 +1,10 @@
 <template>
   <div class="form">
-    <form action="">
+    <form class ="flex" action="">
       <label for="Hotel-name"> Hotel Name </label><br>
       <input v-model="hotel.HotelName" type="text" /><br>
       <label for="feedback"> feedback </label><br>
-      <textarea v-model="hotel.feedback" type="text" /><br>
+      <textarea v-model="hotel.feedback" rows="4" cols="50" /><br>
       <button v-on:click.prevent="store" class="add">Add</button>
     </form>
     
@@ -41,3 +41,11 @@ export default {
   },
 };
 </script>
+<style >
+.form{
+     display:flex;
+    justify-content: center;
+     align-items: center;
+     margin-top:2rem;
+}
+</style>

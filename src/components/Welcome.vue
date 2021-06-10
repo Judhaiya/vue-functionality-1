@@ -1,9 +1,11 @@
 <template>
   <div class="default">
+    <div class="flex">
   <h2>Welcome to HotelFeedback Site</h2>
   <p>vist the below links to register your feedback</p>
   <p><router-link to="/home">View Feedback</router-link></p>
   <p><router-link to="/about">Admin</router-link></p>
+    </div>
   </div>
 </template>
 
@@ -30,5 +32,11 @@ li {
 }
 a {
   color: #42b983;
+}
+.default{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+    margin-top:2rem;
 }
 </style>
