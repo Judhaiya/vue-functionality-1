@@ -11,7 +11,7 @@
     </div>
     <div class="faq-wrapper">
     <div class="faq">
-    <h2>Frequently Asked Question</h2>
+    <h2 class="main-head">Frequently Asked Question</h2>
     <div  class="e-question" v-for="(task,i) in tasks" :Key="i">
       <h2 class="category">Category:{{task.category}}</h2>
       <h3>{{i+1}}:{{task.question}}</h3>
@@ -82,10 +82,14 @@ export default {
   display:grid;
   grid-template-columns:800px ;
   grid-row-gap:1rem;
+  
+}
+.main-head{
   text-align: center;
 }
 .e-question{
   background:mediumpurple;
+  padding:2rem;
  
 }
 .category{
