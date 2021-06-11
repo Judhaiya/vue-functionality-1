@@ -6,7 +6,7 @@
     <div class="card" v-for ="(tour,i) in hotel" :key="i">
         <p >{{tour.HotelName}}</p>
         <p >{{tour.feedback}}</p>
-       
+       <p>{{price}}</p>
     </div>
   </div>
 </div>
@@ -19,6 +19,9 @@ export default {
   computed:{
          hotel(){
            return this.$store.state.hotel
+         },
+         price(){
+           return this.$store.state.hotel.price
          }
        }
 }
