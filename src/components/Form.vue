@@ -45,7 +45,11 @@ export default {
       tasks:null
     };
   },
-  
+  methods:{
+    store:function(){
+      alert('stored')
+    }
+  },
     
     
   
@@ -57,9 +61,11 @@ export default {
      mounted(){
       axios.get("https://opentdb.com/api.php?amount=10")
       .then(result=>{
-      this.tasks=result.data.results
+      this.tasks=result.data.results;
+      localStorage.removeItem(this.hotelStorage);
       })
-    }
+    },
+   
 
     
  

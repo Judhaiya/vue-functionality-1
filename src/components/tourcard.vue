@@ -7,7 +7,17 @@
         <p >{{tour.HotelName}}</p>
         <p >{{tour.feedback}}</p>
        <p>{{price}}</p>
+    
     </div>
+    <!--
+    <div v-for="(randomuser,i) in randomUsers" :Key="i" class="populate-random">
+      <p>{{randomuser.gender}}</p>
+      <p>{{randomuser.dob.date.toLocaleString()}}</p>
+      <p>{{randomuser.location.street.number}}</p>
+      <p>{{randomuser.email}}</p>
+    </div>
+    -->
+    {{randomUsers}}
   </div>
 </div>
 </template>
@@ -16,6 +26,11 @@
 
 export default {
     name:"tourcard",
+    data(){
+      return{
+       
+      }
+    },
   computed:{
          hotel(){
            return this.$store.state.hotel
@@ -23,7 +38,9 @@ export default {
          price(){
            return this.$store.state.hotel.price
          }
-       }
+       },
+      
+
 }
 </script>
 

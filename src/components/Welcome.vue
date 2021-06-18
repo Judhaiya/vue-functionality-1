@@ -5,6 +5,7 @@
   <p>vist the below links to register your feedback</p>
   <p><router-link to="/home">View Feedback</router-link></p>
   <p><router-link to="/about">Admin</router-link></p>
+  <p><router-link to="/birthday">birthday</router-link></p>
     </div>
   </div>
 </template>
